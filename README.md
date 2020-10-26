@@ -1,3 +1,3 @@
 # Demo
 
-<img src="./demo.gif" />
+<img src="./demo2.gif" />
