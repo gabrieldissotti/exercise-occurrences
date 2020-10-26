@@ -32,7 +32,7 @@ function compareOccurrences(occurrences) {
 
 function checkPhrase(phrase) {
 
-  const occurrences = [...phrase].reduce((accumulator, letter, index) => {
+  const occurrences = [...phrase].reduce((accumulator, letter) => {
     return ({
       ...accumulator,
       [letter]: accumulator[letter] ? (accumulator[letter] + 1) : 1
