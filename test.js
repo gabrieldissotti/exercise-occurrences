@@ -1,5 +1,19 @@
 const phrase = 'aabbbbcc'
 
+function isEqualOrCanRemoveOneToMatch(amountA, amountB) {
+  return Boolean(amountB >= (amountA) && amountB <= (amountA + 1));
+}
+
+function compareOccurrences(occurrences) {
+  const lettersAmount = Object.values(occurrences);
+
+  lettersAmount.map((amountA) =>
+    lettersAmount.map(amountB =>
+      isEqualOrCanRemoveOneToMatch(amountA, amountB)
+    ).includes(false)
+  )
+}
+
 function checkPhrase(phrase) {
 
   const occurrences = [...phrase].reduce((accumulator, letter, index) => {
@@ -8,13 +22,9 @@ function checkPhrase(phrase) {
       [letter]: accumulator[letter] ? (accumulator[letter] + 1) : 1
     })
   }, {})
+  
 
-  const amount = Object.values(occurrences);
-
-  const isOkOccurrences = amount.map((item) =>
-    amount.map(subitem =>
-      Boolean(subitem >= (item) && subitem <= (item + 1)
-      )).includes(false));
+  const isOkOccurrences = compareOccurrences(occurrences);
   
   const wrongOccurrencesAmount = isOkOccurrences.filter(item => !item).length;
   
