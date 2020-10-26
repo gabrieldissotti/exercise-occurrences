@@ -1,4 +1,4 @@
-const phrase = 'aaabbbccc'
+const phrase = 'aaabbbbbccc'
 
 function checkPhrase(phrase) {
 
