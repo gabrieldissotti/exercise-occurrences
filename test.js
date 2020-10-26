@@ -1,4 +1,4 @@
-const phrase = 'aaabbbbbccc'
+const phrase = 'aabbbbcc'
 
 function checkPhrase(phrase) {
 
@@ -11,11 +11,16 @@ function checkPhrase(phrase) {
 
   const amount = Object.values(occurrences);
 
-  const data = amount.map((item) => amount.map(subitem =>
-    Boolean(subitem >= (item - 1) && subitem <= (item + 1))
-  ).includes(false));
+  const isOkOccurrences = amount.map((item) =>
+    amount.map(subitem =>
+      Boolean(subitem >= (item) && subitem <= (item + 1)
+      )).includes(false));
+  
+  const wrongOccurrencesAmount = isOkOccurrences.filter(item => !item).length;
+  
+  const isOkOrCanRemoveALetter = wrongOccurrencesAmount > (isOkOccurrences.length / 2);
 
-  return data.includes(false);
+  return isOkOrCanRemoveALetter;
 }
 
 console.log(checkPhrase(phrase))
