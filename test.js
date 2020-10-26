@@ -13,7 +13,6 @@
  * 
  */
 
-
 const phrase = 'aabbcc'
 
 function isEqualOrCanRemoveOneToMatch(amountA, amountB) {
@@ -32,13 +31,10 @@ function compareOccurrences(occurrences) {
 
 function checkPhrase(phrase) {
 
-  const occurrences = [...phrase].reduce((accumulator, letter) => {
-    return ({
-      ...accumulator,
-      [letter]: accumulator[letter] ? (accumulator[letter] + 1) : 1
-    })
-  }, {})
-  
+  const occurrences = [...phrase].reduce((accumulator, letter) => ({
+    ...accumulator,
+    [letter]: accumulator[letter] ? (accumulator[letter] + 1) : 1
+  }), {})
 
   const isOkOccurrences = compareOccurrences(occurrences);
   
