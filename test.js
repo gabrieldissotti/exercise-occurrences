@@ -1,6 +1,6 @@
 /**
  * Escreva uma função que receba uma string e retorne true se ela estiver no 
- * padrão apresentado acima e retorne false caso contrário
+ * padrão apresentado abaixo e retorne false caso contrário
  * 
  * Exemplos: 
  * 
