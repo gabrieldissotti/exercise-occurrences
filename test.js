@@ -1,4 +1,20 @@
-const phrase = 'aabbbbcc'
+/**
+ * Escreva uma função que receba uma string e retorne true se ela estiver no 
+ * padrão apresentado acima e retorne false caso contrário
+ * 
+ * Exemplos: 
+ * 
+ * 'aabbcc' é uma string valida
+ * 'aabcc' é uma string inválida
+ * 'aabbbbcc' é uma string inválida
+ * 
+ * Você pode remover 1 caracter da string para torna-lá válida, mas não pode 
+ * adicionar, Exemplo: 'aabbbcc' => 'aabbcc'
+ * 
+ */
+
+
+const phrase = 'aabbcc'
 
 function isEqualOrCanRemoveOneToMatch(amountA, amountB) {
   return Boolean(amountB >= (amountA) && amountB <= (amountA + 1));
@@ -7,7 +23,7 @@ function isEqualOrCanRemoveOneToMatch(amountA, amountB) {
 function compareOccurrences(occurrences) {
   const lettersAmount = Object.values(occurrences);
 
-  lettersAmount.map((amountA) =>
+  return lettersAmount.map((amountA) =>
     lettersAmount.map(amountB =>
       isEqualOrCanRemoveOneToMatch(amountA, amountB)
     ).includes(false)
@@ -34,5 +50,4 @@ function checkPhrase(phrase) {
 }
 
 console.log(checkPhrase(phrase))
-// solved at 17:52 (26 out.)
 
